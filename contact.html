@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Shopaholic Approved</title>
+  <link rel="stylesheet" href="./src/styles/index.css">
+</head>
+<body>
+  <header id="global-header" class="global-header"></header>
+  
+  <main>
+    <div class="container" style="padding: 48px var(--spacing-md);">
+      <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+        <h1 class="section-title">Get in Touch</h1>
+        <p style="margin-top: var(--spacing-sm); color: var(--color-text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
+          Have questions about order status, preorder items, shipping times, or bulk orders? We'd love to help!
+        </p>
+      </div>
+
+      <!-- Info Strip: Social & Email -->
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <h4 class="contact-info-title">📬 Message Us Directly</h4>
+          <p style="font-size: 14px; margin-bottom: var(--spacing-xs);"><strong>Email:</strong> <a href="mailto:hello@shopaholicapproved.com" style="color: var(--color-accent-lavender); text-decoration: none;">hello@shopaholicapproved.com</a></p>
+          <p style="font-size: 14px;"><strong>Social Media:</strong> @shopaholicapproved on Instagram & TikTok</p>
+        </div>
+        <div class="contact-info-card">
+          <h4 class="contact-info-title">⏱️ Expected Response Time</h4>
+          <p style="font-size: 14px; line-height: 1.6;">
+            We typically respond within <strong>24-48 hours</strong> (excluding national holidays). If your inquiry is regarding a specific item request or preorder, please mention details in your message.
+          </p>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="form-container-card" id="contact-form-card">
+        <form id="general-contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="con-name">Your Name <span class="required">*</span></label>
+              <input class="form-input" type="text" id="con-name" required placeholder="Fabi Fabi">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="con-email">Email Address <span class="required">*</span></label>
+              <input class="form-input" type="email" id="con-email" required placeholder="collector@shopaholicapproved.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="con-subject">Subject</label>
+            <input class="form-input" type="text" id="con-subject" placeholder="Question about preorder ETA">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="con-message">Your Message <span class="required">*</span></label>
+            <textarea class="form-input" id="con-message" required placeholder="Tell us what's on your mind..."></textarea>
+          </div>
+
+          <button class="btn-submit" type="submit" style="margin-top: var(--spacing-sm);">Send Message</button>
+        </form>
+
+        <!-- Success overlay -->
+        <div id="contact-success" class="form-success-state" style="display: none;">
+          <div class="success-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </div>
+          <h2 class="success-title">Message Sent!</h2>
+          <p class="success-desc">
+            Thanks for reaching out! Your message was delivered successfully. We've sent a confirmation to <strong id="contact-email-confirm"></strong>, and our team will get back to you within 24-48 hours.
+          </p>
+          <button class="btn-shop-now" id="btn-reset-contact">Send Another Message</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer id="global-footer" class="global-footer"></footer>
+  
+  <script type="module" src="./src/components/header.js"></script>
+  <script type="module" src="./src/components/footer.js"></script>
+  <script type="module" src="./src/pages/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon Catalog | Shopaholic Approved</title>
+  <link rel="stylesheet" href="./src/styles/index.css">
+</head>
+<body>
+  <header id="global-header" class="global-header"></header>
+  
+  <main>
+    <div class="container" style="padding: 48px var(--spacing-md);">
+      <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+        <h1 class="section-title">Coming Soon & Restocks</h1>
+        <p style="margin-top: var(--spacing-sm); color: var(--color-text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
+          Get a sneak peek at incoming shipments, seasonal collections, and restocks heading to our boutique shelves.
+        </p>
+      </div>
+
+      <!-- Upcoming Teaser Cards -->
+      <div class="products-grid" style="margin-bottom: var(--spacing-xxl);">
+        <!-- Teaser 1 -->
+        <div class="product-card">
+          <div class="product-card-img-wrapper">
+            <span class="product-badge" style="background-color: var(--color-badge-soon-bg); color: var(--color-badge-soon-text);">Restock Coming</span>
+            <img class="product-card-img" src="https://images.unsplash.com/photo-1589051030485-26859b1d75dd?w=600&auto=format&fit=crop&q=60" alt="Cable bites" style="filter: grayscale(20%);">
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-category">The Junk Drawer</span>
+            <h3 class="product-card-name">Sleepy Animal Cable Bites</h3>
+            <div class="product-card-price" style="color: var(--color-text-muted); font-size: 15px;">Est. Restock: Mid August</div>
+            <p class="product-card-desc">Protect your phone chargers with these adorable sleeping animal shapes. Universal fit for standard lightning and USB-C wires.</p>
+            <button class="btn-add-to-cart" disabled style="background-color: var(--color-badge-soldout-bg); border-color: var(--color-border-light); color: var(--color-text-muted);">Coming Soon</button>
+          </div>
+        </div>
+
+        <!-- Teaser 2 -->
+        <div class="product-card">
+          <div class="product-card-img-wrapper">
+            <span class="product-badge" style="background-color: var(--color-badge-soon-bg); color: var(--color-badge-soon-text);">New Release</span>
+            <img class="product-card-img" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=60" alt="Cute Socks" style="filter: grayscale(20%);">
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-category">Apparel</span>
+            <h3 class="product-card-name">Pastel Cozy Winter Socks</h3>
+            <div class="product-card-price" style="color: var(--color-text-muted); font-size: 15px;">Est. Release: Late September</div>
+            <p class="product-card-desc">Keep your toes warm with our upcoming fleece-lined thick knit lounge socks featuring cute embroidery characters.</p>
+            <button class="btn-add-to-cart" disabled style="background-color: var(--color-badge-soldout-bg); border-color: var(--color-border-light); color: var(--color-text-muted);">Coming Soon</button>
+          </div>
+        </div>
+
+        <!-- Teaser 3 -->
+        <div class="product-card">
+          <div class="product-card-img-wrapper">
+            <span class="product-badge" style="background-color: var(--color-badge-soon-bg); color: var(--color-badge-soon-text);">Restock Coming</span>
+            <img class="product-card-img" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=60" alt="Ceramic Organizer" style="filter: grayscale(20%);">
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-category">Home & Kitchen</span>
+            <h3 class="product-card-name">Desktop Organizer Mug Trees</h3>
+            <div class="product-card-price" style="color: var(--color-text-muted); font-size: 15px;">Est. Restock: Early October</div>
+            <p class="product-card-desc">Store your favorite coffee mugs on this pastel pink desktop tree stand. Holds up to 6 cups securely with wooden branches.</p>
+            <button class="btn-add-to-cart" disabled style="background-color: var(--color-badge-soldout-bg); border-color: var(--color-border-light); color: var(--color-text-muted);">Coming Soon</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Sign Up Card -->
+      <div class="form-container-card" style="text-align: center;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: var(--spacing-sm);">📬 Stay in the Loop</h3>
+        <p style="font-size: 14px; color: var(--color-text-muted); margin-bottom: var(--spacing-lg); max-width: 500px; margin-left: auto; margin-right: auto;">
+          Want to know the exact minute our incoming stock drops or when preorder windows open? Subscribe to our collector list. No spam, only cute alerts.
+        </p>
+        
+        <form id="newsletter-form" style="display: flex; gap: var(--spacing-sm); max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+          <input class="form-input" type="email" id="news-email" required placeholder="collector@shopaholicapproved.com" style="flex: 1; min-width: 250px;">
+          <button class="btn-submit" type="submit" style="width: auto; padding: 10px 28px; white-space: nowrap;">Get Restock Alerts</button>
+        </form>
+
+        <div id="newsletter-success" style="display: none; color: var(--color-badge-instock-text); font-weight: 600; margin-top: var(--spacing-md); font-size: 14px;">
+          ✓ Subscribed successfully! We will keep you updated.
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer id="global-footer" class="global-footer"></footer>
+  
+  <script type="module" src="./src/components/header.js"></script>
+  <script type="module" src="./src/components/footer.js"></script>
+  
+  <!-- Inline simple logic for subscription visual success state -->
+  <script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('newsletter-form');
+      const success = document.getElementById('newsletter-success');
+      if (form && success) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = document.getElementById('news-email').value;
+          if (email && email.includes('@')) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

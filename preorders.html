@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preorder Catalog | Shopaholic Approved</title>
+  <link rel="stylesheet" href="./src/styles/index.css">
+</head>
+<body>
+  <header id="global-header" class="global-header"></header>
+  
+  <main>
+    <div class="container" style="padding: 48px var(--spacing-md);">
+      <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+        <h1 class="section-title">Preorder Collectibles</h1>
+        <p style="margin-top: var(--spacing-sm); color: var(--color-text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
+          Reserve upcoming releases, rare items, and collection drops before they sell out.
+        </p>
+      </div>
+
+      <!-- Preorder Disclaimer -->
+      <div class="preorder-disclaimer">
+        <h3>📢 Preorder Information & Disclaimers</h3>
+        <p>Please review our preorder policies before expressing interest:</p>
+        <ul>
+          <li><strong>Items not in hand:</strong> Preorder items are not currently stocked in our boutique. They are confirmed reservations.</li>
+          <li><strong>Flexible ETAs:</strong> ETAs are subject to change based on supplier production schedules, international shipping, and customs clearance delays.</li>
+          <li><strong>No immediate charges:</strong> No payment processing occurs during this demo. Ordering and fulfillment details will be confirmed with you prior to shipping.</li>
+          <li><strong>Reserve list:</strong> Add preorder items to your cart and submit the contact request to register your reserve interest.</li>
+        </ul>
+      </div>
+
+      <!-- Product Grid Container -->
+      <div class="products-grid" id="preorders-products-grid">
+        <!-- Dynamically populated by preorders.js -->
+      </div>
+    </div>
+  </main>
+  
+  <footer id="global-footer" class="global-footer"></footer>
+  
+  <script type="module" src="./src/components/header.js"></script>
+  <script type="module" src="./src/components/footer.js"></script>
+  <script type="module" src="./src/pages/preorders.js"></script>
+</body>
+</html>

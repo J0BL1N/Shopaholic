@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Products | Shopaholic Approved</title>
+  <link rel="stylesheet" href="./src/styles/index.css">
+</head>
+<body>
+  <header id="global-header" class="global-header"></header>
+  
+  <main>
+    <div class="container" style="padding: 48px var(--spacing-md);">
+      <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+        <h1 class="section-title">Shop All Products</h1>
+        <p style="margin-top: var(--spacing-sm); color: var(--color-text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
+          Browse our handpicked collection of cute figures, plushies, bags, apparel, and sweet treasures curated just for you.
+        </p>
+      </div>
+
+      <!-- Controls: Category Filters & Sorting -->
+      <div class="shop-controls">
+        <div class="filter-group" id="category-filters">
+          <button class="filter-btn active" data-category="all">All Items</button>
+          <button class="filter-btn" data-category="blind-boxes">Blind Boxes</button>
+          <button class="filter-btn" data-category="plushies">Plushies</button>
+          <button class="filter-btn" data-category="bags-purses">Bags & Purses</button>
+          <button class="filter-btn" data-category="apparel">Apparel</button>
+          <button class="filter-btn" data-category="home-kitchen">Home & Kitchen</button>
+          <button class="filter-btn" data-category="junk-drawer">The Junk Drawer</button>
+        </div>
+
+        <div class="sort-group">
+          <label for="sort-select" class="sort-label">Sort by:</label>
+          <select id="sort-select" class="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid Container -->
+      <div class="products-grid" id="shop-products-grid">
+        <!-- Dynamically populated by shop.js -->
+      </div>
+    </div>
+  </main>
+  
+  <footer id="global-footer" class="global-footer"></footer>
+  
+  <script type="module" src="./src/components/header.js"></script>
+  <script type="module" src="./src/components/footer.js"></script>
+  <script type="module" src="./src/pages/shop.js"></script>
+</body>
+</html>

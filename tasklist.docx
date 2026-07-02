@@ -1,0 +1,1113 @@
+# Shopaholic Approved Website Build Task List
+
+## Global Rule
+
+Only complete **one task at a time**.
+
+After every task:
+
+1. Finish the task fully.
+2. Test the task.
+3. Update `/docs/task-log.md`.
+4. Update `/docs/task-state.md`.
+5. Write a report.
+6. Stop.
+7. Ask for approval before starting the next task.
+
+Do not skip ahead.
+
+Do not combine tasks.
+
+Do not begin the next task without user approval.
+
+---
+
+# Phase 1 — Audit, Setup, and Planning
+
+## Task 1: Project Audit and Setup
+
+### Goal
+
+Inspect the current website/project and understand the exact setup before making changes.
+
+### Required Actions
+
+* Inspect all folders and files.
+* Identify the framework, builder, or CMS.
+* Identify whether the site is static, WordPress, Hostinger builder, React, Next.js, Vite, plain HTML/CSS/JS, or another stack.
+* Identify package manager if present.
+* Identify current pages.
+* Identify current components.
+* Identify current assets/images.
+* Identify current ecommerce functionality.
+* Identify whether checkout/cart exists.
+* Identify whether product data exists.
+* Identify deployment method.
+* Identify current build/test commands.
+* Create `/docs/task-log.md` if missing.
+* Create `/docs/task-state.md` if missing.
+* Write initial audit findings.
+
+### Completion Criteria
+
+* Project structure is understood.
+* Logs exist.
+* No design or feature changes are made yet.
+* First report is written.
+
+### Stop Point
+
+Stop and ask for approval before Task 2.
+
+---
+
+## Task 2: Website Strategy and Site Map
+
+### Goal
+
+Create a clear ecommerce site map and structure for Shopaholic Approved.
+
+### Required Actions
+
+* Create or update `/docs/site-plan.md`.
+* Define required pages:
+
+  * Home
+  * Shop
+  * Product Detail
+  * Cart
+  * Checkout
+  * Preorders
+  * Catalog
+  * Request an Item
+  * About
+  * Contact
+  * FAQ
+  * Shipping Policy
+  * Refund Policy
+  * Privacy Policy
+  * Terms of Service
+* Define navigation structure.
+* Define footer structure.
+* Define homepage sections.
+* Define product categories.
+* Define preorder flow.
+* Define request-an-item flow.
+
+### Completion Criteria
+
+* Site map is documented.
+* Page purpose is clear.
+* Navigation plan is clear.
+* No major build changes unless needed for documentation.
+
+### Stop Point
+
+Stop and ask for approval before Task 3.
+
+---
+
+## Task 3: Brand and Design System Plan
+
+### Goal
+
+Create the visual design direction before redesigning pages.
+
+### Required Actions
+
+* Define colors.
+* Define typography.
+* Define spacing rules.
+* Define button styles.
+* Define card styles.
+* Define product badge styles.
+* Define mobile layout rules.
+* Define image style rules.
+* Define accessibility requirements.
+* Create or update `/docs/design-system.md`.
+
+### Completion Criteria
+
+* Design system is documented.
+* Brand direction is clear.
+* No full redesign yet unless user approves.
+
+### Stop Point
+
+Stop and ask for approval before Task 4.
+
+---
+
+# Phase 2 — Foundation Fixes
+
+## Task 4: Navigation and Footer Fix
+
+### Goal
+
+Make the navigation and footer complete, clear, and ecommerce-ready.
+
+### Required Actions
+
+* Review current header/nav.
+* Ensure nav includes:
+
+  * Home
+  * Shop
+  * Preorders
+  * Catalog
+  * Request an Item
+  * About
+  * Contact
+* Add cart link/icon if ecommerce cart exists.
+* Make nav mobile-friendly.
+* Review footer.
+* Add footer links:
+
+  * Shop
+  * Preorders
+  * Contact
+  * FAQ
+  * Shipping
+  * Returns
+  * Privacy
+  * Terms
+* Add shop disclaimer area if appropriate.
+* Test all links.
+
+### Completion Criteria
+
+* Header works on desktop and mobile.
+* Footer includes key ecommerce links.
+* No broken nav links.
+
+### Stop Point
+
+Stop and ask for approval before Task 5.
+
+---
+
+## Task 5: Homepage Hero Section
+
+### Goal
+
+Improve the first impression of the homepage.
+
+### Required Actions
+
+* Create a strong hero headline.
+* Add a clear subheading.
+* Add primary CTA: Shop Now.
+* Add secondary CTA: View Preorders.
+* Use brand-appropriate imagery.
+* Make it mobile responsive.
+* Ensure text is readable.
+* Add proper H1.
+
+### Suggested Copy
+
+```text
+Cute Collectibles, Shopaholic Approved
+
+Find Labubu favorites, blind boxes, plushies, and preorder collectibles curated for collectors who love the hunt.
+```
+
+### Completion Criteria
+
+* Homepage hero clearly explains what the shop sells.
+* CTA buttons work.
+* Mobile layout works.
+* No console/build errors.
+
+### Stop Point
+
+Stop and ask for approval before Task 6.
+
+---
+
+## Task 6: Homepage Category Sections
+
+### Goal
+
+Add clear shopping paths for customers.
+
+### Required Actions
+
+Create category cards or sections for:
+
+* Labubu
+* Blind Boxes
+* Plushies
+* Preorders
+* New Arrivals
+* Collectibles
+
+Each category should have:
+
+* Image or icon
+* Title
+* Short description
+* Link to category/shop filter if supported
+
+### Completion Criteria
+
+* Categories are visible.
+* Category links work or are clearly prepared.
+* Layout works on mobile.
+
+### Stop Point
+
+Stop and ask for approval before Task 7.
+
+---
+
+## Task 7: Homepage Trust Section
+
+### Goal
+
+Make the shop feel safe and legitimate.
+
+### Required Actions
+
+Add a trust section with points like:
+
+* Secure checkout
+* Carefully packed orders
+* Collector-focused finds
+* Preorder updates
+* Support available
+* Authenticity-conscious sourcing
+
+Add disclaimer if selling Labubu/POP MART items independently.
+
+### Completion Criteria
+
+* Trust messaging is visible.
+* Copy is honest and not misleading.
+* Disclaimer is included if appropriate.
+
+### Stop Point
+
+Stop and ask for approval before Task 8.
+
+---
+
+## Task 8: Homepage Featured Products Section
+
+### Goal
+
+Show products directly on the homepage.
+
+### Required Actions
+
+* Inspect existing product data.
+* Create product card component if needed.
+* Add featured products section.
+* Include:
+
+  * Image
+  * Product title
+  * Price
+  * Availability badge
+  * CTA
+* Use placeholder products only if clearly marked.
+
+### Completion Criteria
+
+* Featured products display correctly.
+* Product cards are consistent.
+* Mobile layout works.
+* No fake inventory claims.
+
+### Stop Point
+
+Stop and ask for approval before Task 9.
+
+---
+
+# Phase 3 — Product and Shop System
+
+## Task 9: Product Data Structure
+
+### Goal
+
+Create or clean up the product data model.
+
+### Required Actions
+
+* Identify current product data source.
+* If missing, create a structured product data file or connect existing ecommerce source.
+* Define fields:
+
+  * id
+  * title
+  * slug
+  * category
+  * status
+  * price
+  * images
+  * description
+  * details
+  * inventory
+  * preorder info
+  * tags
+* Do not invent real prices or inventory unless provided.
+
+### Completion Criteria
+
+* Product structure is consistent.
+* Product data can support shop/product pages.
+* Placeholder data is labeled.
+
+### Stop Point
+
+Stop and ask for approval before Task 10.
+
+---
+
+## Task 10: Shop Page Product Grid
+
+### Goal
+
+Build or improve the main shop page.
+
+### Required Actions
+
+* Add product grid.
+* Add product cards.
+* Add responsive layout.
+* Add empty state.
+* Add loading state if needed.
+* Add error state if needed.
+* Add category labels.
+* Add availability badges.
+
+### Completion Criteria
+
+* Shop page displays products.
+* Product cards are clickable.
+* Mobile layout works.
+* No console/build errors.
+
+### Stop Point
+
+Stop and ask for approval before Task 11.
+
+---
+
+## Task 11: Shop Filters and Sorting
+
+### Goal
+
+Make products easier to browse.
+
+### Required Actions
+
+Add filters for:
+
+* Category
+* Availability
+* In Stock
+* Preorder
+* Sold Out
+* Price range if supported
+
+Add sorting for:
+
+* Newest
+* Price low to high
+* Price high to low
+* Name A-Z
+
+### Completion Criteria
+
+* Filters work.
+* Sorting works.
+* Empty results message appears when needed.
+* Mobile filter UI works.
+
+### Stop Point
+
+Stop and ask for approval before Task 12.
+
+---
+
+## Task 12: Product Detail Page
+
+### Goal
+
+Create clear product pages that help customers buy confidently.
+
+### Required Actions
+
+Each product page should include:
+
+* Product images
+* Title
+* Price
+* Status badge
+* Description
+* Product details
+* Authenticity/source note
+* Shipping estimate
+* Preorder ETA if relevant
+* Add to cart or purchase CTA
+* Related products if possible
+
+### Completion Criteria
+
+* Product page works for each product.
+* Missing product state works.
+* Mobile layout works.
+* SEO title/meta exists if supported.
+
+### Stop Point
+
+Stop and ask for approval before Task 13.
+
+---
+
+## Task 13: Product Badges and Inventory States
+
+### Goal
+
+Make product availability clear.
+
+### Required Actions
+
+Add badge logic for:
+
+* In Stock
+* Low Stock
+* Sold Out
+* Preorder
+* Coming Soon
+* New Arrival
+
+### Completion Criteria
+
+* Badges display correctly.
+* No misleading stock claims.
+* Sold out products cannot be purchased if cart exists.
+
+### Stop Point
+
+Stop and ask for approval before Task 14.
+
+---
+
+# Phase 4 — Preorders and Requests
+
+## Task 14: Preorder Page
+
+### Goal
+
+Create a clear preorder page.
+
+### Required Actions
+
+* Explain what preorder means.
+* Show preorder products.
+* Include estimated arrival wording.
+* Include delay warning.
+* Include cancellation/refund note.
+* Include contact/update note.
+
+### Suggested Copy
+
+```text
+Preorder items are not currently in hand unless stated otherwise. Estimated arrival dates are provided when available, but delays can happen due to supplier timelines, shipping, customs, or release changes. We’ll keep customers updated if anything changes.
+```
+
+### Completion Criteria
+
+* Preorder page exists.
+* Preorder terms are clear.
+* Products display if preorder products exist.
+* No unclear promises.
+
+### Stop Point
+
+Stop and ask for approval before Task 15.
+
+---
+
+## Task 15: Request an Item Page
+
+### Goal
+
+Let customers request specific collectibles.
+
+### Required Actions
+
+Create a request form with:
+
+* Name
+* Email
+* Item name
+* Brand/series
+* Reference link
+* Image upload if supported
+* Budget
+* Notes
+
+### Important
+
+The form must actually submit somewhere.
+
+Possible destinations:
+
+* Email
+* Hostinger form backend
+* CRM
+* Database
+* Third-party form service
+
+Do not create a fake form.
+
+### Completion Criteria
+
+* Form fields exist.
+* Validation exists.
+* Submission works or limitation is clearly reported.
+* Success/error states exist.
+
+### Stop Point
+
+Stop and ask for approval before Task 16.
+
+---
+
+## Task 16: Contact Page
+
+### Goal
+
+Make it easy for customers to contact the shop.
+
+### Required Actions
+
+* Add contact form or contact details.
+* Add expected response time.
+* Add social links if provided.
+* Add FAQ links.
+* Add support topics:
+
+  * Orders
+  * Preorders
+  * Shipping
+  * Item requests
+
+### Completion Criteria
+
+* Contact page works.
+* Form submits if included.
+* Mobile layout works.
+
+### Stop Point
+
+Stop and ask for approval before Task 17.
+
+---
+
+# Phase 5 — Cart, Checkout, and Policies
+
+## Task 17: Cart Review
+
+### Goal
+
+Inspect or build cart functionality.
+
+### Required Actions
+
+* Check whether cart exists.
+* Test adding products.
+* Test removing products.
+* Test quantity changes.
+* Test subtotal.
+* Test cart persistence.
+* Test preorder warning if preorder items are in cart.
+
+### Completion Criteria
+
+* Cart behavior is documented.
+* Bugs are fixed if within scope.
+* Sensitive checkout decisions are not changed without approval.
+
+### Stop Point
+
+Stop and ask for approval before Task 18.
+
+---
+
+## Task 18: Checkout Review
+
+### Goal
+
+Review checkout setup and identify what is needed.
+
+### Required Actions
+
+* Identify checkout provider.
+* Check if payment is real, test, or missing.
+* Check HTTPS.
+* Check order confirmation flow.
+* Check email confirmation if available.
+* Check tax/shipping settings if available.
+* Do not change payment provider without approval.
+
+### Completion Criteria
+
+* Checkout state is documented.
+* Risks are reported.
+* Recommendations are listed.
+
+### Stop Point
+
+Stop and ask for approval before Task 19.
+
+---
+
+## Task 19: Shipping Policy Page
+
+### Goal
+
+Create or improve shipping policy.
+
+### Required Actions
+
+Include:
+
+* Processing time
+* Shipping regions
+* Shipping carriers if known
+* Tracking info
+* Lost/damaged package guidance
+* Preorder shipping note
+* Combined in-stock/preorder order note
+
+### Completion Criteria
+
+* Shipping page exists.
+* Copy is clear.
+* No unsupported claims.
+
+### Stop Point
+
+Stop and ask for approval before Task 20.
+
+---
+
+## Task 20: Refund and Returns Policy Page
+
+### Goal
+
+Create or improve refund/returns policy.
+
+### Required Actions
+
+Include:
+
+* Return eligibility
+* Damaged item process
+* Wrong item process
+* Preorder cancellation policy
+* Final sale items if applicable
+* Contact instructions
+
+### Completion Criteria
+
+* Refund page exists.
+* Copy is clear.
+* User approval required for final legal/policy wording.
+
+### Stop Point
+
+Stop and ask for approval before Task 21.
+
+---
+
+## Task 21: Privacy Policy and Terms Pages
+
+### Goal
+
+Add basic legal trust pages.
+
+### Required Actions
+
+Create or improve:
+
+* Privacy Policy
+* Terms of Service
+
+Include:
+
+* Data collected
+* Payment handling note
+* Contact forms
+* Cookies/analytics if used
+* Customer responsibility
+* Shop policies
+* Independent shop disclaimer
+
+### Completion Criteria
+
+* Pages exist.
+* Footer links work.
+* Wording is marked for owner/legal review if needed.
+
+### Stop Point
+
+Stop and ask for approval before Task 22.
+
+---
+
+# Phase 6 — SEO, Accessibility, and Performance
+
+## Task 22: SEO Metadata
+
+### Goal
+
+Improve search and social sharing.
+
+### Required Actions
+
+Add or verify:
+
+* Page titles
+* Meta descriptions
+* H1 tags
+* Clean headings
+* Product alt text
+* Open Graph tags if supported
+* Sitemap if supported
+* Robots settings if supported
+
+### Completion Criteria
+
+* Important pages have metadata.
+* Homepage has strong title/description.
+* Product pages have product-specific metadata if possible.
+
+### Stop Point
+
+Stop and ask for approval before Task 23.
+
+---
+
+## Task 23: Accessibility Pass
+
+### Goal
+
+Make the site easier for everyone to use.
+
+### Required Actions
+
+Check:
+
+* Alt text
+* Heading order
+* Button labels
+* Form labels
+* Keyboard navigation
+* Focus states
+* Color contrast
+* Tap targets
+* Error messages
+
+### Completion Criteria
+
+* Accessibility issues are fixed or documented.
+* Site is easier to use on mobile and keyboard.
+
+### Stop Point
+
+Stop and ask for approval before Task 24.
+
+---
+
+## Task 24: Mobile Responsiveness Pass
+
+### Goal
+
+Make the site excellent on phones.
+
+### Required Actions
+
+Test:
+
+* Homepage
+* Shop
+* Product page
+* Cart
+* Checkout
+* Preorders
+* Contact
+* Footer
+* Navigation menu
+
+Check:
+
+* No horizontal scrolling
+* Buttons are easy to tap
+* Product grid looks good
+* Forms are usable
+* Text is readable
+
+### Completion Criteria
+
+* Mobile layout works.
+* Issues fixed or documented.
+
+### Stop Point
+
+Stop and ask for approval before Task 25.
+
+---
+
+## Task 25: Performance Optimization
+
+### Goal
+
+Make the site faster.
+
+### Required Actions
+
+* Compress large images.
+* Lazy-load images.
+* Remove unused code if safe.
+* Avoid unnecessary libraries.
+* Check bundle size if applicable.
+* Check loading speed.
+* Check font loading.
+
+### Completion Criteria
+
+* Site performance improves.
+* No broken images.
+* No layout regressions.
+
+### Stop Point
+
+Stop and ask for approval before Task 26.
+
+---
+
+# Phase 7 — Final QA and Launch
+
+## Task 26: Broken Link and Form QA
+
+### Goal
+
+Catch basic site issues before launch.
+
+### Required Actions
+
+* Click every nav link.
+* Click every footer link.
+* Test all CTAs.
+* Test product links.
+* Test category links.
+* Test contact form.
+* Test request form.
+* Test preorder links.
+
+### Completion Criteria
+
+* Broken links fixed.
+* Broken forms fixed or documented.
+
+### Stop Point
+
+Stop and ask for approval before Task 27.
+
+---
+
+## Task 27: Full Ecommerce Flow QA
+
+### Goal
+
+Test the buyer journey.
+
+### Required Actions
+
+Test:
+
+* Home → Shop
+* Shop → Product
+* Product → Cart
+* Cart → Checkout
+* Preorder product flow
+* Request item flow
+* Contact flow
+
+### Completion Criteria
+
+* Buyer journey works.
+* Any checkout/payment limits are documented.
+* No major blocker remains unreported.
+
+### Stop Point
+
+Stop and ask for approval before Task 28.
+
+---
+
+## Task 28: Final Content Polish
+
+### Goal
+
+Make the site sound professional and consistent.
+
+### Required Actions
+
+Review and polish copy on:
+
+* Home
+* Shop
+* Product pages
+* Preorders
+* About
+* Contact
+* FAQ
+* Policies
+* Buttons
+* Empty states
+* Error states
+
+### Completion Criteria
+
+* Copy is consistent.
+* No obvious typos.
+* Tone matches brand.
+
+### Stop Point
+
+Stop and ask for approval before Task 29.
+
+---
+
+## Task 29: Deployment Checklist
+
+### Goal
+
+Prepare for safe deployment.
+
+### Required Actions
+
+Confirm:
+
+* Build passes.
+* Env vars are configured.
+* No secrets exposed.
+* Checkout settings reviewed.
+* Forms work.
+* Domain target is correct.
+* HTTPS works.
+* Footer policies exist.
+* Mobile checked.
+* Logs updated.
+
+### Completion Criteria
+
+* Deployment readiness is documented.
+* User approval requested before deployment.
+
+### Stop Point
+
+Stop and ask for approval before Task 30.
+
+---
+
+## Task 30: Deploy or Publish
+
+### Goal
+
+Publish the finished website only after approval.
+
+### Required Actions
+
+* Deploy using the correct Hostinger/project workflow.
+* Verify live site.
+* Check homepage.
+* Check shop.
+* Check product page.
+* Check contact/request forms.
+* Check cart/checkout if applicable.
+* Check mobile live version.
+* Document deployment result.
+
+### Completion Criteria
+
+* Live site is verified.
+* Final task report is written.
+* Any remaining issues are listed.
+
+### Stop Point
+
+Stop and ask before starting any future improvement tasks.
+
+---
+
+# Required Report After Every Task
+
+Use this format every time:
+
+```markdown
+# Task Report: [Task Name]
+
+## Goal
+[What this task was meant to accomplish.]
+
+## Files Inspected
+- [file/path]
+- [file/path]
+
+## Files Changed
+- [file/path] — [what changed]
+
+## What I Changed
+- [change 1]
+- [change 2]
+- [change 3]
+
+## Why I Changed It
+[Reasoning.]
+
+## Testing Performed
+- [test/check 1]
+- [test/check 2]
+
+## Result
+[Pass/fail/partial.]
+
+## Issues Found
+- [issue 1]
+- [issue 2]
+
+## Issues Not Fixed Yet
+- [issue 1]
+- [issue 2]
+
+## Logs Updated
+- `/docs/task-log.md`
+- `/docs/task-state.md`
+
+## Next Recommended Task
+[Task name.]
+
+STATUS: Task complete.
+NEXT STEP: Waiting for user approval before starting the next task.
+```
+
+---
+
+# First Prompt To Give Antigravity
+
+Use this prompt after adding the skill:
+
+```text
+Use the shopaholic-approved-ecommerce-builder skill.
+
+Start with Task 1 only: Project Audit and Setup.
+
+Do not redesign anything yet. Inspect the current project, identify the stack, create /docs/task-log.md and /docs/task-state.md if missing, write the first audit report, and then stop. Do not move to Task 2 until I approve it.
+```
