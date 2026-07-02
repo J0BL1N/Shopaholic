@@ -1,19 +1,22 @@
-import { products } from '../data/products.js';
+import { getPreorderProducts } from '../lib/productsApi.js';
 import { getProductCardHTML } from '../utils/productCard.js';
 import { addToCart } from '../utils/cart.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('preorders-products-grid');
   if (!grid) return;
 
-  // Filter preorder products
-  const preorderProducts = products.filter(p => p.status === 'preorder');
+  let loadedProducts = [];
 
-  // Render HTML
-  if (preorderProducts.length === 0) {
-    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--color-text-muted);">No preorder items are currently listed. Check back soon!</div>`;
-  } else {
-    grid.innerHTML = preorderProducts.map(getProductCardHTML).join('');
+  try {
+    loadedProducts = await getPreorderProducts();
+    if (loadedProducts.length === 0) {
+      grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 48px; color: var(--color-text-muted);">No preorder items are currently listed. Check back soon!</div>`;
+    } else {
+      grid.innerHTML = loadedProducts.map(getProductCardHTML).join('');
+    }
+  } catch (err) {
+    console.error("Error loading preorder products:", err);
   }
 
   // Add to Cart delegation
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
 
     const productId = btn.getAttribute('data-id');
-    const product = products.find(p => p.id === productId);
+    const product = loadedProducts.find(p => p.id === productId);
 
     if (product) {
       addToCart(product, 1);

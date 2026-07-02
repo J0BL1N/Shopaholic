@@ -1,17 +1,19 @@
-import { products } from '../data/products.js';
+import { getFeaturedProducts } from '../lib/productsApi.js';
 import { getProductCardHTML } from '../utils/productCard.js';
 import { addToCart } from '../utils/cart.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('featured-products-grid');
   if (!grid) return;
 
-  // Let's feature 4 products: a blind box, plushie, bag, and kitchen item
-  const featuredIds = ['sweet-dream-bunny', 'peach-bunny-charm', 'lavender-mini-backpack', 'sleepy-cat-mug'];
-  const featuredProducts = products.filter(p => featuredIds.includes(p.id));
+  let loadedProducts = [];
 
-  // Render cards
-  grid.innerHTML = featuredProducts.map(getProductCardHTML).join('');
+  try {
+    loadedProducts = await getFeaturedProducts();
+    grid.innerHTML = loadedProducts.map(getProductCardHTML).join('');
+  } catch (err) {
+    console.error("Error loading featured products:", err);
+  }
 
   // Setup Add-to-Cart click event delegation
   grid.addEventListener('click', (e) => {
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
     
     const productId = btn.getAttribute('data-id');
-    const product = products.find(p => p.id === productId);
+    const product = loadedProducts.find(p => p.id === productId);
     if (product) {
       addToCart(product, 1);
       

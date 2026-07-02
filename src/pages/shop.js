@@ -1,14 +1,15 @@
-import { products } from '../data/products.js';
+import { getProducts } from '../lib/productsApi.js';
 import { getProductCardHTML } from '../utils/productCard.js';
 import { addToCart } from '../utils/cart.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('shop-products-grid');
   const filterContainer = document.getElementById('category-filters');
   const sortSelect = document.getElementById('sort-select');
 
   if (!grid) return;
 
+  let loadedProducts = [];
   let currentCategory = 'all';
   let currentSort = 'featured';
 
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const urlCategory = urlParams.get('category');
   
-  if (urlCategory) {
+  if (urlCategory && filterContainer) {
     // Validate if the button exists before setting it
     const targetBtn = filterContainer.querySelector(`[data-category="${urlCategory}"]`);
     if (targetBtn) {
@@ -33,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Main render function
   const render = () => {
     // Filter
-    let filtered = products;
+    let filtered = loadedProducts;
     if (currentCategory !== 'all') {
-      filtered = products.filter(p => p.category === currentCategory);
+      filtered = loadedProducts.filter(p => p.category === currentCategory);
     }
 
     // Sort (make a copy of array so we don't mutate original)
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
 
     const productId = btn.getAttribute('data-id');
-    const product = products.find(p => p.id === productId);
+    const product = loadedProducts.find(p => p.id === productId);
 
     if (product) {
       addToCart(product, 1);
@@ -115,6 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Initial render
+  // Initial Fetch & Render
+  try {
+    loadedProducts = await getProducts();
+  } catch (err) {
+    console.error("Error fetching products:", err);
+  }
   render();
 });
