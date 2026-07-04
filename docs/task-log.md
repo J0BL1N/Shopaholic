@@ -426,3 +426,26 @@
 **Issues / Risks:**
 - User must enable "GitHub Actions" as the build source in the repository Pages settings on GitHub to activate the deploy pipeline.
 **Next Suggested Task:** Phase 4 — Request Item Flow (Implement item request forms, input validations, success logs, and loading spinners).
+
+## GitHub Pages Live Preview Deployment QA Pass (Blocked)
+
+**Date:** 2026-07-04
+**Status:** Blocked
+**Goal:** Verify the live GitHub Pages preview deployment URL (https://J0BL1N.github.io/Shopaholic/) once built and deployed.
+**Files Inspected:**
+- None.
+**Files Changed:**
+- `C:\Users\jayde\Downloads\fabby website\docs\task-state.md` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\docs\task-log.md` (MODIFY)
+**Summary of Results & Blockers:**
+- Jay pushed commits `e71dfdd..33cfb5c` successfully to GitHub.
+- Triggered GitHub Actions deploy workflow run #1 failed on the deploy step with: "Deployment failed, try again later."
+- **Diagnosis**: GitHub Pages is currently configured to build/serve directly from the `main` branch root (using its default static site builder) rather than the "GitHub Actions" source. This causes GitHub Pages to serve raw source code files instead of Vite's built `/dist` assets, resulting in bare import resolution failures in Chrome.
+- **Action Required**: The deployment QA remains blocked until Jay changes the Pages build source settings in the repository interface to **GitHub Actions** (Settings -> Pages -> Source: GitHub Actions) and triggers a rerun of the deployment job.
+**Testing Performed:**
+- Ran local preview and mock subfolder resolution on port 4174 (resolved successfully).
+- Checked live URL via browser subagent (observed bare import crashes due to raw source files serving instead of dist folder).
+**Result:** Blocked (Awaiting user repository settings adjustment).
+**Issues / Risks:**
+- None.
+**Next Suggested Task:** Awaiting user verification of Pages settings adjustment.

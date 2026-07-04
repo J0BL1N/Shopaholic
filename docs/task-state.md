@@ -1,8 +1,8 @@
 # Shopaholic Approved Website Build - Task State
 
 ## Current Status
-- **Current Task:** Phase 3: Preorder Flow & Pages Deployment (Complete, waiting for approval)
-- **Overall Progress:** Phase 3 (Preorder Flow) and GitHub Pages Deployment setup are 100% complete and fully verified. Hardened preorder product cards, warm detail disclaimer copy, cart labeling, and automated CI/CD pipeline using GitHub Actions. Currently planning Phase 4.
+- **Current Task:** GitHub Pages Deployment QA Pass (Blocked, waiting for repository settings change)
+- **Overall Progress:** Phase 3 (Preorder Flow) is 100% complete and verified. The automated GitHub Pages Actions workflow has been pushed, but the final deployment step failed because the repository's Pages settings must be changed to "GitHub Actions" as the build source. Once changed, the live QA pass can run.
 
 ---
 
@@ -82,6 +82,7 @@
 - [ ] **Task 13 & 14 (Hotfix, Roadmap & Docs):** Pending User Verification
 - [ ] **Phase 2 Cart Completion (Tasks 15-19):** Pending User Verification
 - [ ] **Phase 3 Preorder Flow & Pages Deployment (Tasks 20-21b):** Pending User Verification
+- [ ] **GitHub Pages Live Preview Deployment QA Pass:** Blocked (Waiting for Jay to enable Actions source in Settings > Pages)
 
 ---
 
