@@ -22,8 +22,12 @@ gantt
     Policy & Info Page Polish   :after des4, des5, 5d
     section Phase 6
     SEO, A11y & Mobile Polish   :after des5, des6, 7d
-    section Phase 7 & 8
-    Supabase Admin & Payment    :after des6, des7, 14d
+    section Phase 7
+    Supabase Admin (Later)      :after des6, des7, 10d
+    section Phase 8
+    Checkout & Payments (Later) :after des7, des8, 10d
+    section Phase 9
+    Accounts & Auth (Later)     :after des8, des9, 10d
 ```
 
 ---
@@ -102,16 +106,17 @@ gantt
   - Perform tab-navigation keyboard tests.
   - Inspect mobile layouts on actual devices to ensure zero horizontal scrollbars or cramped touch targets.
 
-### Phase 7 — Supabase/Admin Later
+### Phase 7 — Supabase & Admin Dashboard (Later)
 * **Status:** Later
 * **Priority:** Medium
 * **Notes:**
   - Supabase client queries are fully supported but default to static local products if credentials are not configured or table fetch errors occur.
-  - Do not implement database schema changes or write admin dashboards for product management unless requested. Keep products static or dynamic fallback-based for now.
+  - Implement the **Fabby Admin Page** after the cart, preorder, and request flows are completely stable.
+  - Design a **Daily Tasks & Orders Checklist** interface to help manage order queue status and update products.
 * **Manual QA Required:**
-  - None.
+  - Verify admin login and checklist status persistence.
 
-### Phase 8 — Checkout/Payment Later
+### Phase 8 — Checkout & Payment (Later)
 * **Status:** Later
 * **Priority:** Medium
 * **Notes:**
@@ -119,3 +124,13 @@ gantt
   - Do not write integration credentials or payment keys.
 * **Manual QA Required:**
   - Confirm the Checkout button displays an informative modal or page stating checkout integration is coming soon.
+
+### Phase 9 — Accounts & Authentication (Later)
+* **Status:** Later
+* **Priority:** Medium
+* **Notes:**
+  - Integrate user profiles and account records to save order lists and address configurations.
+  - Implement **Normal email/password login**.
+  - Implement **Google social login** (OAuth) in the same phase.
+* **Manual QA Required:**
+  - Verify credentials validation errors and successful Google redirect callback logic.

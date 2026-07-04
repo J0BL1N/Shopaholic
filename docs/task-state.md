@@ -49,11 +49,16 @@
 - [ ] **Task 28: Alt Tags, Screen-Reader Labels, & Contrast Audits**
 - [ ] **Task 29: Mobile Spacing, No Horizontal Overflow, & Lighthouse Auditing**
 
-### Phase 7 — Supabase/Admin Later
-- [ ] **Task 30: Schema/DB Finalization Planning (Wait for User Request)**
+### Phase 7 — Supabase & Admin Dashboard (Later)
+- [ ] **Task 30: Fabby Admin Page & Dynamic Schema Configuration**
+- [ ] **Task 31: Daily Tasks & Orders Checklist Interface**
 
-### Phase 8 — Checkout/Payment Later
-- [ ] **Task 31: Checkout Integration Planning (Placeholder Action for now)**
+### Phase 8 — Checkout & Payment (Later)
+- [ ] **Task 32: Checkout Integration Planning (Placeholder Action for now)**
+
+### Phase 9 — Accounts & Authentication (Later)
+- [ ] **Task 33: Normal Email/Password Login**
+- [ ] **Task 34: Google Login Integration**
 
 ---
 
