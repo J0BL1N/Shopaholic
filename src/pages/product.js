@@ -44,27 +44,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   const btnText = document.getElementById('btn-text');
 
   // Breadcrumbs & Title
-  const categoryText = CATEGORY_MAP[product.category] || product.category;
+  const categoryText = CATEGORY_MAP[product.category] || product.category || 'Uncategorized';
   categoryLink.textContent = categoryText;
-  categoryLink.href = `./shop.html?category=${product.category}`;
-  breadcrumbName.textContent = product.name;
-  titleEl.textContent = product.name;
+  categoryLink.href = `./shop.html?category=${product.category || ''}`;
+  breadcrumbName.textContent = product.name || 'Unnamed Product';
+  titleEl.textContent = product.name || 'Unnamed Product';
 
   // Price & Image
-  priceEl.textContent = `$${product.price.toFixed(2)}`;
-  imageEl.src = product.image;
-  imageEl.alt = product.name;
+  const priceValue = typeof product.price === 'number' ? product.price : Number(product.price);
+  priceEl.textContent = `$${isNaN(priceValue) ? '0.00' : priceValue.toFixed(2)}`;
+  imageEl.src = product.image || 'https://images.unsplash.com/photo-1559251606-c623743a6d76?w=600&auto=format&fit=crop&q=60';
+  imageEl.alt = product.name || 'Unnamed Product';
 
   // Status Badge
-  statusBadge.textContent = BADGE_MAP[product.status] || product.status;
-  statusBadge.className = `product-badge badge-${product.status}`;
+  const status = product.status || 'in_stock';
+  statusBadge.textContent = BADGE_MAP[status] || status;
+  statusBadge.className = `product-badge badge-${status}`;
 
   // Description
-  descEl.textContent = product.shortDescription;
+  descEl.textContent = product.shortDescription || '';
 
   // Preorder Details
-  const isPreorder = product.status === 'preorder';
-  const isSoldOut = product.status === 'sold_out';
+  const isPreorder = status === 'preorder';
+  const isSoldOut = status === 'sold_out';
 
   if (isPreorder) {
     preorderBox.style.display = 'block';

@@ -14,13 +14,13 @@ const staticCategories = [
 // Helper to map DB row keys to frontend keys
 function mapProduct(row) {
   return {
-    id: row.id,
-    name: row.name,
-    category: row.category_slug,
-    price: Number(row.price),
-    image: row.image,
-    status: row.status,
-    shortDescription: row.short_description,
+    id: row.id || '',
+    name: row.name || 'Unnamed Product',
+    category: row.category_slug || 'uncategorized',
+    price: row.price !== null && row.price !== undefined ? Number(row.price) : 0,
+    image: row.image || '',
+    status: row.status || 'in_stock',
+    shortDescription: row.short_description || '',
     preorderEta: row.preorder_eta || undefined,
     stockCount: row.stock_count !== null && row.stock_count !== undefined ? Number(row.stock_count) : undefined
   };
