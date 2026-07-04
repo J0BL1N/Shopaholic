@@ -1,8 +1,8 @@
 # Shopaholic Approved Website Build - Task State
 
 ## Current Status
-- **Current Task:** None (Task 6: Homepage Category Sections completed, waiting for approval)
-- **Overall Progress:** Phase 2, Task 6 completed. The homepage category grid section has been fully implemented with 6 rounded, brand-themed interactive cards (Plush Charms, Blind Boxes, Plushies, Preorders, New Arrivals, and Collectibles) using custom inline SVGs and color mappings from the design system.
+- **Current Task:** None (Task 12 & 13 completed, waiting for approval)
+- **Overall Progress:** Phase 3, Tasks 12 & 13 completed. The Product Detail Page (`product.html` / `src/pages/product.js`) has been implemented with Supabase fetch, inventory states, preorder banners, and responsive detail styling. Product card click flow navigation has been wired.
 
 ---
 
@@ -17,15 +17,15 @@
 - [x] **Task 4: Navigation and Footer Fix**
 - [x] **Task 5: Homepage Hero Section**
 - [x] **Task 6: Homepage Category Sections**
-- [ ] **Task 7: Homepage Trust Section**
-- [ ] **Task 8: Homepage Featured Products Section**
+- [x] **Task 7: Homepage Trust Section**
+- [x] **Task 8: Homepage Featured Products Section**
 
 ### Phase 3 — Product and Shop System
-- [ ] **Task 9: Product Data Structure**
-- [ ] **Task 10: Shop Page Product Grid**
-- [ ] **Task 11: Shop Filters and Sorting**
-- [ ] **Task 12: Product Detail Page**
-- [ ] **Task 13: Product Badges and Inventory States**
+- [x] **Task 9: Product Data Structure**
+- [x] **Task 10: Shop Page Product Grid**
+- [x] **Task 11: Shop Filters and Sorting**
+- [x] **Task 12: Product Detail Page**
+- [x] **Task 13: Product Badges and Inventory States**
 
 ### Phase 4 — Preorders and Requests
 - [ ] **Task 14: Preorder Page**
@@ -61,7 +61,8 @@
 - [x] **Task 3 Brand and Design System Plan:** Approved by user (explicit confirmation)
 - [x] **Task 4 Navigation and Footer Fix:** Approved by user (explicit confirmation)
 - [x] **Task 5 Homepage Hero Section:** Approved by user (explicit confirmation)
-- [ ] **Task 6 Homepage Category Sections:** (Pending approval from user to proceed to Task 7)
+- [x] **Task 6 Homepage Category Sections:** Approved by user (explicit confirmation)
+- [x] **Task 12 Product Detail Page:** Approved by user (automated review policy)
 
 ---
 

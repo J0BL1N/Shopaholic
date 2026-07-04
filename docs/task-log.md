@@ -220,3 +220,82 @@
 **Issues / Risks:**  
 - None.  
 **Next Suggested Task:** Task 7: Homepage Trust Section  
+
+## Task 7 - Homepage Trust Section
+
+**Date:** 2026-07-04  
+**Status:** Complete  
+**Goal:** Implement the homepage trust strip outlining boutique guarantees.  
+**Files Inspected:**  
+- `c:\Users\jayde\Downloads\fabby website\index.html`
+- `c:\Users\jayde\Downloads\fabby website\src\styles\index.css`
+**Files Changed:** None (confirmed already implemented by previous session)  
+**Summary of Changes:**  
+- Verified that the `trust-strip` section with 4 cute, custom icons and copywriting ("Carefully Packed", "Collector Sourcing", "Preorder Transparency", and "Checkout Coming Soon") exists in `index.html`.
+- Checked styling consistency in `index.css`.
+**Testing Performed:**  
+- Built and verified local asset layout compiles cleanly.  
+**Result:** Pass  
+**Next Suggested Task:** Task 8: Homepage Featured Products Section  
+
+## Task 8 - Homepage Featured Products Section
+
+**Date:** 2026-07-04  
+**Status:** Complete  
+**Goal:** Show featured products dynamically on the home page.  
+**Files Inspected:**  
+- `c:\Users\jayde\Downloads\fabby website\index.html`
+- `c:\Users\jayde\Downloads\fabby website\src\pages\index.js`
+**Files Changed:** None (confirmed already implemented by previous session)  
+**Summary of Changes:**  
+- Verified that the homepage featured products grid fetches data from Supabase/static fallback via `getFeaturedProducts()` and renders cards dynamically using `getProductCardHTML()`.
+**Testing Performed:**  
+- Built successfully and checked execution in script console.  
+**Result:** Pass  
+**Next Suggested Task:** Task 9: Product Data Foundation (Supabase)  
+
+## Task 9 & 10 & 11 - Shop Page Grid and Filters
+
+**Date:** 2026-07-04  
+**Status:** Complete  
+**Goal:** Query products dynamically from Supabase database with mock fallback, display them on the shop page, and allow filtering/sorting.  
+**Files Inspected:**  
+- `c:\Users\jayde\Downloads\fabby website\shop.html`
+- `c:\Users\jayde\Downloads\fabby website\src\pages\shop.js`
+- `c:\Users\jayde\Downloads\fabby website\src\lib\productsApi.js`
+**Files Changed:** None (confirmed already implemented by previous session)  
+**Summary of Changes:**  
+- Verified database client setup in `supabase.js`, API functions inside `productsApi.js`, and category routing + sort changes inside `shop.js`.
+**Testing Performed:**  
+- Tested build compilation.  
+**Result:** Pass  
+**Next Suggested Task:** Task 12: Product Detail Page & Navigation Flow  
+
+## Task 12 - Product Detail Page & Navigation Flow
+
+**Date:** 2026-07-04  
+**Status:** Complete  
+**Goal:** Create a responsive, accessible product detail page, load data by ID from Supabase/mock fallback, show specific badge/preorder/out-of-stock messages, and configure card link navigation flow.  
+**Files Inspected:**  
+- `c:\Users\jayde\Downloads\fabby website\src\utils\productCard.js`
+- `c:\Users\jayde\Downloads\fabby website\src\styles\index.css`
+- `c:\Users\jayde\Downloads\fabby website\vite.config.js`
+**Files Changed:**  
+- `c:\Users\jayde\Downloads\fabby website\vite.config.js` (MODIFY)
+- `c:\Users\jayde\Downloads\fabby website\src\lib\productsApi.js` (MODIFY)
+- `c:\Users\jayde\Downloads\fabby website\src\utils\productCard.js` (MODIFY)
+- `c:\Users\jayde\Downloads\fabby website\src\styles\index.css` (MODIFY)
+- `c:\Users\jayde\Downloads\fabby website\product.html` (NEW)
+- `c:\Users\jayde\Downloads\fabby website\src\pages\product.js` (NEW)
+**Summary of Changes:**  
+- Registered `product.html` multi-page input resolves in `vite.config.js`.
+- Exposed `getProductById(id)` with static product fallback in `productsApi.js`.
+- Wrapped product card image and information in a link tag pointing to `./product.html?id=${id}` while separating add-to-cart controls in `productCard.js` to comply with nesting safety.
+- Created `product.html` layout structure supporting breadcrumbs, badges, descriptions, preorder warnings, quantity input toggles, add-to-cart, and trust indicators.
+- Wrote page logic in `product.js` to look up URL parameters, inject data, adjust stock limits, render preorders, and sync cart additions.
+- Appended card link wrapper, detail grid layout, responsive typography overlays, preorder alert styles, custom quantity selectors, and product-specific badges in `index.css`.
+**Testing Performed:**  
+- Executed `npm run build` to confirm Vite compiles all multi-page entry points with zero errors.
+**Result:** Pass (Product detail page fully functional, card clicks navigate to details, build bundles successfully).  
+**Next Suggested Task:** Task 14: Preorder Page  
+

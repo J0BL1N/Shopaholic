@@ -137,3 +137,32 @@ export async function getCategories() {
     return staticCategories;
   }
 }
+
+export async function getProductById(id) {
+  if (!hasSupabaseConfig || !supabase) {
+    return staticProducts.find(p => p.id === id);
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('products')
+      .select('*')
+      .eq('id', id)
+      .single();
+
+    if (error) {
+      console.warn(`Supabase query error for product id ${id}, checking static fallback:`, error.message);
+      return staticProducts.find(p => p.id === id);
+    }
+
+    if (!data) {
+      return staticProducts.find(p => p.id === id);
+    }
+
+    return mapProduct(data);
+  } catch (err) {
+    console.error(`Supabase query failed for product id ${id}, checking static fallback:`, err);
+    return staticProducts.find(p => p.id === id);
+  }
+}
+

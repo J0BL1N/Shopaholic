@@ -14,6 +14,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         faq: resolve(__dirname, 'faq.html'),
         cart: resolve(__dirname, 'cart.html'),
+        product: resolve(__dirname, 'product.html'),
         shipping: resolve(__dirname, 'policies/shipping.html'),
         refunds: resolve(__dirname, 'policies/refunds.html'),
         privacy: resolve(__dirname, 'policies/privacy.html'),
