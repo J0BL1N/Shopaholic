@@ -1,8 +1,8 @@
 # Shopaholic Approved Website Build - Task State
 
 ## Current Status
-- **Current Task:** Phase 2: Cart Completion (Complete, waiting for approval)
-- **Overall Progress:** Phase 2 (Cart Completion) is 100% complete and fully verified. Hardened with robust quantity boundaries, sold-out guards, dynamic subtotals, and mixed-item shipping warning banners. Currently planning Phase 3.
+- **Current Task:** Phase 3: Preorder Flow & Pages Deployment (Complete, waiting for approval)
+- **Overall Progress:** Phase 3 (Preorder Flow) and GitHub Pages Deployment setup are 100% complete and fully verified. Hardened preorder product cards, warm detail disclaimer copy, cart labeling, and automated CI/CD pipeline using GitHub Actions. Currently planning Phase 4.
 
 ---
 
@@ -32,8 +32,9 @@
 - [x] **Task 19: Combined Shipping Preorder Warnings in Cart**
 
 ### Phase 3 — Preorder Flow
-- [ ] **Task 20: Dynamic Preorder Listing Page**
-- [ ] **Task 21: Preorder Detail Copy & Cart Labeling**
+- [x] **Task 20: Dynamic Preorder Listing Page**
+- [x] **Task 21: Preorder Detail Copy & Cart Labeling**
+- [x] **Task 21b: GitHub Pages Deployment Configuration & CI Workflow**
 
 ### Phase 4 — Request Item Flow
 - [ ] **Task 22: Request Item Form Page & Validation**
@@ -80,6 +81,7 @@
 - [x] **Task 12 Product Detail Page:** Approved by user
 - [ ] **Task 13 & 14 (Hotfix, Roadmap & Docs):** Pending User Verification
 - [ ] **Phase 2 Cart Completion (Tasks 15-19):** Pending User Verification
+- [ ] **Phase 3 Preorder Flow & Pages Deployment (Tasks 20-21b):** Pending User Verification
 
 ---
 

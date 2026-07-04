@@ -66,12 +66,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Preorder Details
   const isPreorder = status === 'preorder';
-  const isSoldOut = status === 'sold_out';
+  const isSoldOut = status === 'sold_out' || product.stockCount === 0;
 
-  if (isPreorder) {
+  if (isPreorder && !isSoldOut) {
     preorderBox.style.display = 'block';
     preorderEta.textContent = product.preorderEta || 'TBA';
-    btnText.textContent = 'Preorder Item';
+    btnText.textContent = 'Preorder';
   } else {
     preorderBox.style.display = 'none';
   }
@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     btnAddToCart.disabled = true;
     btnAddToCart.classList.add('btn-disabled');
     btnText.textContent = 'Sold Out';
+  } else if (isPreorder && product.stockCount !== undefined) {
+    stockStatus.innerHTML = `<span class="stock-ok">Only ${product.stockCount} reservations available. Ready to secure!</span>`;
   } else if (product.status === 'low_stock' && product.stockCount !== undefined) {
     stockStatus.innerHTML = `<span class="stock-low-warning">Only ${product.stockCount} items left in stock!</span>`;
   } else if (product.status === 'in_stock' && product.stockCount !== undefined) {

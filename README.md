@@ -35,37 +35,38 @@ A premium, client-side collectible e-commerce frontend built using Vite, vanilla
 
 ---
 
-## ☁️ Cloudflare Pages Setup
+## 🚀 GitHub Pages Live Preview Deployment
 
-To deploy the static output to Cloudflare Pages:
+This static multi-page site is configured to build and deploy automatically to **GitHub Pages** via **GitHub Actions**:
 
-1. **Connect Repository:**
-   Connect your GitHub repository to Cloudflare Pages.
+1. **Select Actions Deployment Source**:
+   - Go to your repository settings on GitHub: **Settings** → **Pages**.
+   - Under **Build and deployment** → **Source**, change the selection from *Deploy from a branch* to **GitHub Actions**.
 
-2. **Build Settings:**
-   Configure the build parameters exactly as follows:
-   - **Framework Preset:** None (or Vite)
-   - **Build Command:** `npm run build`
-   - **Build Output Directory:** `dist`
+2. **Deploy by Pushing to Main**:
+   - Any push to the `main` branch triggers the build workflow defined in `.github/workflows/deploy.yml`.
+   - Track build progress under the **Actions** tab in GitHub.
 
-3. **Environment Variables:**
-   Under the project **Settings > Environment Variables** in Cloudflare, add:
-   - `VITE_SUPABASE_URL` = (Your production Supabase Project URL)
-   - `VITE_SUPABASE_ANON_KEY` = (Your production Supabase Anon Key)
+3. **Access Live Preview URL**:
+   - Once completed, the live site is viewable at:
+     `https://J0BL1N.github.io/Shopaholic/`
 
 ---
 
 ## 🛠️ Local Development
 
-To run the project locally:
+To run and build the project locally:
 
 ```bash
 # Install dependencies
 npm install
 
-# Run the dev server
+# Run Vite local development server
 npm run dev
 
-# Build the production bundle
+# Compile the production bundle (build output served under /dist)
 npm run build
+
+# Preview the compiled production build locally
+npm run preview
 ```

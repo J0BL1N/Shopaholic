@@ -22,13 +22,13 @@ export function getProductCardHTML(product) {
   const status = product.status || "in_stock";
   const badgeText = BADGE_MAP[status] || "";
   const categoryText = CATEGORY_MAP[product.category] || product.category || "Uncategorized";
-  const isSoldOut = status === "sold_out";
+  const isSoldOut = status === "sold_out" || product.stockCount === 0;
   
   let buttonText = "Add to Cart";
-  if (status === "preorder") {
-    buttonText = "Preorder Item";
-  } else if (isSoldOut) {
+  if (isSoldOut) {
     buttonText = "Sold Out";
+  } else if (status === "preorder") {
+    buttonText = "Preorder";
   }
 
   const etaTag = status === "preorder" && product.preorderEta

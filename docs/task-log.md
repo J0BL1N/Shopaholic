@@ -386,4 +386,43 @@
 **Result:** Pass (Cart page rendering, quantity boundaries, localStorage persistence, and mixed shipping alerts fully tested and operational).
 **Issues / Risks:**
 - Visual styles, responsive wrapping, and tap target dimensions must be manually verified on actual physical devices by Jay/Fabi.
-**Next Suggested Task:** Phase 3 — Preorder Flow (Implement dynamic preorder items listings, detail disclaimer copies, and cart descriptions).
+**Next Suggested Task:** Phase 2 — Cart Completion (Polish cart layout, quantities, deletions, and local storage state persistence).
+
+## Phase 3 Preorder Flow & Pages Deployment (Tasks 20-21b) - Preorder Catalog & Deploy Pipeline
+
+**Date:** 2026-07-04
+**Status:** Complete
+**Goal:** Implement dynamic preorder product catalog listings, warm customer-friendly ETA and disclaimer copy, button states, and set up an automated CI/CD build-and-deploy pipeline using GitHub Actions to host static previews on GitHub Pages.
+**Files Inspected:**
+- `C:\Users\jayde\Downloads\fabby website\preorders.html`
+- `C:\Users\jayde\Downloads\fabby website\src\pages\preorders.js`
+- `C:\Users\jayde\Downloads\fabby website\src\utils\productCard.js`
+- `C:\Users\jayde\Downloads\fabby website\product.html`
+- `C:\Users\jayde\Downloads\fabby website\src\pages\product.js`
+- `C:\Users\jayde\Downloads\fabby website\cart.html`
+- `C:\Users\jayde\Downloads\fabby website\vite.config.js`
+- `C:\Users\jayde\Downloads\fabby website\README.md`
+**Files Changed:**
+- `C:\Users\jayde\Downloads\fabby website\preorders.html` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\pages\preorders.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\utils\productCard.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\product.html` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\pages\product.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\cart.html` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\vite.config.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\README.md` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\.github\workflows\deploy.yml` (NEW)
+**Summary of Changes:**
+- **Warm Preorder Disclaimers**: Updated the disclaimer copy in `preorders.html` and `product.html` to adopt warm, customer-friendly phrasing, removing legal and transaction terms.
+- **Preorders Loader & Empty State**: Configured `src/pages/preorders.js` to render a spinner during asset load and styled an illustrative empty state panel redirecting to `/shop.html`.
+- **Preorder Card Limits**: Configured card generators in `src/utils/productCard.js` to support sold-out boundaries (`product.stockCount === 0`) and rename the default action button label to "Preorder".
+- **Product Details & Cart Notices**: Configured `src/pages/product.js` to set preorder button titles to "Preorder", track stock counts, and display available reserve metrics. Warmed up cart combined shipping warnings in `cart.html`.
+- **Conditional Build Base Path**: Updated `vite.config.js` to support the subfolder base path `/Shopaholic/` during production build and preview configurations, maintaining the standard root `/` base path for the local development server.
+- **GitHub Actions deployment**: Created `.github/workflows/deploy.yml` to automate dependency installs, production compiles, and directory deployment to GitHub Pages. Added setup manuals to `README.md`.
+**Testing Performed:**
+- Developed two Puppeteer test scripts (`test_preorders.js` and `test_preview.js`) to verify preorder grid rendering, concurrent details page navigation, preorder cart badge increases, subfolder asset loads, and console warning fallbacks under the built Preview environment (`/Shopaholic/`).
+- Verified `npm run build` and `npm run preview` execute cleanly.
+**Result:** Pass (Preorder flow verified and deployment configuration fully operational).
+**Issues / Risks:**
+- User must enable "GitHub Actions" as the build source in the repository Pages settings on GitHub to activate the deploy pipeline.
+**Next Suggested Task:** Phase 4 — Request Item Flow (Implement item request forms, input validations, success logs, and loading spinners).
