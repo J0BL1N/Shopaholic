@@ -1,8 +1,8 @@
 # Shopaholic Approved Website Build - Task State
 
 ## Current Status
-- **Current Task:** Roadmap Planning & Docs Cleanup (Complete, waiting for approval)
-- **Overall Progress:** Phase 1 (Shopping Foundation) is 100% complete and fully verified. Hardened with robust defensive fallback mappings and rendering protection to prevent runtime TypeErrors on missing database values. Currently planning Phase 2.
+- **Current Task:** Phase 2: Cart Completion (Complete, waiting for approval)
+- **Overall Progress:** Phase 2 (Cart Completion) is 100% complete and fully verified. Hardened with robust quantity boundaries, sold-out guards, dynamic subtotals, and mixed-item shipping warning banners. Currently planning Phase 3.
 
 ---
 
@@ -25,11 +25,11 @@
 - [x] **Task 14: Roadmap Planning & Docs Cleanup**
 
 ### Phase 2 — Cart Completion
-- [ ] **Task 15: Cart Page Polish & Quantity Inputs**
-- [ ] **Task 16: Cart Drawer Slide-out UI**
-- [ ] **Task 17: Cart Item Removal & Empty State Handling**
-- [ ] **Task 18: Cart LocalStorage Persistence**
-- [ ] **Task 19: Combined Shipping Preorder Warnings in Cart**
+- [x] **Task 15: Cart Page Polish & Quantity Inputs**
+- [x] **Task 16: Cart Drawer Slide-out UI**
+- [x] **Task 17: Cart Item Removal & Empty State Handling**
+- [x] **Task 18: Cart LocalStorage Persistence**
+- [x] **Task 19: Combined Shipping Preorder Warnings in Cart**
 
 ### Phase 3 — Preorder Flow
 - [ ] **Task 20: Dynamic Preorder Listing Page**
@@ -74,6 +74,7 @@
 - [x] **Task 6 Homepage Category Sections:** Approved by user
 - [x] **Task 12 Product Detail Page:** Approved by user
 - [ ] **Task 13 & 14 (Hotfix, Roadmap & Docs):** Pending User Verification
+- [ ] **Phase 2 Cart Completion (Tasks 15-19):** Pending User Verification
 
 ---
 

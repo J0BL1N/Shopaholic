@@ -357,3 +357,33 @@
 - None.
 **Next Suggested Task:** Phase 2 — Cart Completion (Polish cart layout, quantities, deletions, and local storage state persistence).
 
+## Phase 2 Cart Completion (Tasks 15-19) - Shopping Cart Polish & Persistence
+
+**Date:** 2026-07-04
+**Status:** Complete
+**Goal:** Implement and polish Phase 2 — Cart Completion. Support dynamic cart item rendering, quantity constraints, item removals, empty state views, localStorage persistence, sold-out item blocks, and mixed preorder shipping notice alerts.
+**Files Inspected:**
+- `C:\Users\jayde\Downloads\fabby website\cart.html`
+- `C:\Users\jayde\Downloads\fabby website\src\pages\cart.js`
+- `C:\Users\jayde\Downloads\fabby website\src\utils\cart.js`
+- `C:\Users\jayde\Downloads\fabby website\src\styles\index.css`
+**Files Changed:**
+- `C:\Users\jayde\Downloads\fabby website\cart.html` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\pages\cart.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\utils\cart.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\styles\index.css` (MODIFY)
+**Summary of Changes:**
+- Sanitized `addToCart` in `cart.js` utility to block adding items if `product.status === 'sold_out'` or `product.stockCount === 0`.
+- Hardened `updateQuantity` to parse inputs as integers, block `NaN`/empty inputs, and cap quantities at the product's `stockCount` limit, displaying standard browser alerts when capped.
+- Modified `cart.html` to include a `#cart-mixed-notice` alert container above the item grid.
+- Configured `src/pages/cart.js` to render rows dynamically. It displays product thumbnails, linked names, category labels, preorder badges, line totals, and quantity buttons.
+- Bound decrement `-` buttons to disable when quantity is 1, and increment `+` buttons to disable when quantity reaches the `stockCount` boundary or if sold out.
+- Implemented warning banner trigger logic: if the cart merges preorder and in-stock items, a prominent customer shipping delay warning notice is displayed.
+- Styled `.cart-mixed-notice` banners, disabled `.btn-qty:disabled` pointer states, and preorder badge alignments inside `index.css`.
+**Testing Performed:**
+- Created a selenium-style browser integration test `test_cart.js` using `puppeteer-core` to launch headless Chrome, clear/populate localStorage, reload `cart.html`, click increment and removal buttons, check DOM properties, verify subtotals, and scan console logs for exceptions.
+- Ran `npm run build` to confirm Vite bundles all assets and multi-page configurations cleanly.
+**Result:** Pass (Cart page rendering, quantity boundaries, localStorage persistence, and mixed shipping alerts fully tested and operational).
+**Issues / Risks:**
+- Visual styles, responsive wrapping, and tap target dimensions must be manually verified on actual physical devices by Jay/Fabi.
+**Next Suggested Task:** Phase 3 — Preorder Flow (Implement dynamic preorder items listings, detail disclaimer copies, and cart descriptions).

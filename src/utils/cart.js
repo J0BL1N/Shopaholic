@@ -19,13 +19,22 @@ export function saveCart(cart) {
 }
 
 export function addToCart(product, quantity = 1) {
+  const qty = parseInt(quantity, 10);
+  if (isNaN(qty) || qty < 1) return;
+
+  // Guard against sold out
+  if (product.status === 'sold_out' || product.stockCount === 0) {
+    alert("Sorry, this item is sold out and unavailable!");
+    return;
+  }
+
   const cart = getCart();
   const existingItem = cart.find(item => item.id === product.id);
 
   if (existingItem) {
     // Check stock if applicable
     if (product.stockCount !== undefined) {
-      const newQuantity = existingItem.quantity + quantity;
+      const newQuantity = existingItem.quantity + qty;
       if (newQuantity <= product.stockCount) {
         existingItem.quantity = newQuantity;
       } else {
@@ -33,14 +42,9 @@ export function addToCart(product, quantity = 1) {
         alert(`Sorry, only ${product.stockCount} items are available in stock.`);
       }
     } else {
-      existingItem.quantity += quantity;
+      existingItem.quantity += qty;
     }
   } else {
-    // Check if stock is 0
-    if (product.stockCount === 0) {
-      alert("Sorry, this item is sold out!");
-      return;
-    }
     cart.push({
       id: product.id,
       name: product.name,
@@ -50,7 +54,7 @@ export function addToCart(product, quantity = 1) {
       status: product.status,
       stockCount: product.stockCount,
       preorderEta: product.preorderEta,
-      quantity: quantity
+      quantity: qty
     });
   }
 
@@ -62,16 +66,25 @@ export function updateQuantity(productId, quantity) {
   const item = cart.find(item => item.id === productId);
 
   if (item) {
-    if (quantity <= 0) {
+    const qty = parseInt(quantity, 10);
+    if (isNaN(qty) || qty < 1) {
+      return;
+    }
+
+    // Check if the item is sold out
+    if (item.status === 'sold_out' || item.stockCount === 0) {
+      alert("Sorry, this item is sold out and unavailable!");
       cart = cart.filter(item => item.id !== productId);
+      saveCart(cart);
+      return;
+    }
+
+    // Check stock limit
+    if (item.stockCount !== undefined && qty > item.stockCount) {
+      item.quantity = item.stockCount;
+      alert(`Sorry, only ${item.stockCount} items are available in stock.`);
     } else {
-      // Check stock limit
-      if (item.stockCount !== undefined && quantity > item.stockCount) {
-        item.quantity = item.stockCount;
-        alert(`Sorry, only ${item.stockCount} items are available in stock.`);
-      } else {
-        item.quantity = quantity;
-      }
+      item.quantity = qty;
     }
     saveCart(cart);
   }

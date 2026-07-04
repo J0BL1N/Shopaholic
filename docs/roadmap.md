@@ -13,9 +13,9 @@ gantt
     section Phase 1
     Shopping Foundation (Done)  :done, des1, 2026-06-19, 2026-07-04
     section Phase 2
-    Cart Completion (Next)      :active, des2, 2026-07-04, 2026-07-15
+    Cart Completion (Done)      :done, des2, 2026-07-04, 2026-07-04
     section Phase 3
-    Preorder Flow (Later)       :after des2, des3, 10d
+    Preorder Flow (Next)        :active, des3, 2026-07-04, 10d
     section Phase 4
     Request Item Flow (Later)   :after des3, des4, 7d
     section Phase 5
@@ -44,7 +44,7 @@ gantt
   - Confirm look-and-feel of product cards, filters, and page loading states.
 
 ### Phase 2 — Cart Completion
-* **Status:** Next
+* **Status:** Done
 * **Priority:** High
 * **Notes:**
   - Polish the side drawer cart and the standalone cart page layout (`cart.html`).
@@ -59,7 +59,7 @@ gantt
   - Mobile layout QA: verify cart drawer can be easily scrolled and closed.
 
 ### Phase 3 — Preorder Flow
-* **Status:** Later
+* **Status:** Next
 * **Priority:** High
 * **Notes:**
   - Code dynamic product fetching on the Preorders page (`preorders.html`) filtering for `status === 'preorder'`.
