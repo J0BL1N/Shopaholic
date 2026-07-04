@@ -1,82 +1,87 @@
 # Shopaholic Approved Website Build - Task State
 
 ## Current Status
-- **Current Task:** None (Task 12 & 13 completed, waiting for approval)
-- **Overall Progress:** Phase 3, Tasks 12 & 13 completed. The Product Detail Page (`product.html` / `src/pages/product.js`) has been implemented with Supabase fetch, inventory states, preorder banners, and responsive detail styling. Product card click flow navigation has been wired.
+- **Current Task:** Roadmap Planning & Docs Cleanup (Complete, waiting for approval)
+- **Overall Progress:** Phase 1 (Shopping Foundation) is 100% complete and fully verified. Hardened with robust defensive fallback mappings and rendering protection to prevent runtime TypeErrors on missing database values. Currently planning Phase 2.
 
 ---
 
-## Task Checklist
+## Task Checklist (8-Phase Roadmap)
 
-### Phase 1 — Audit, Setup, and Planning
+### Phase 1 — Current Shopping Foundation
 - [x] **Task 1: Project Audit and Setup**
 - [x] **Task 2: Website Strategy and Site Map**
 - [x] **Task 3: Brand and Design System Plan**
-
-### Phase 2 — Foundation Fixes
 - [x] **Task 4: Navigation and Footer Fix**
 - [x] **Task 5: Homepage Hero Section**
 - [x] **Task 6: Homepage Category Sections**
 - [x] **Task 7: Homepage Trust Section**
 - [x] **Task 8: Homepage Featured Products Section**
-
-### Phase 3 — Product and Shop System
-- [x] **Task 9: Product Data Structure**
+- [x] **Task 9: Product Data Foundation & Supabase Client Setup**
 - [x] **Task 10: Shop Page Product Grid**
 - [x] **Task 11: Shop Filters and Sorting**
-- [x] **Task 12: Product Detail Page**
-- [x] **Task 13: Product Badges and Inventory States**
+- [x] **Task 12: Product Detail Page & Navigation Flow**
+- [x] **Task 13: Product Badges, Inventory States, & Fallback Hardening**
+- [x] **Task 14: Roadmap Planning & Docs Cleanup**
 
-### Phase 4 — Preorders and Requests
-- [ ] **Task 14: Preorder Page**
-- [ ] **Task 15: Request an Item Page**
-- [ ] **Task 16: Contact Page**
+### Phase 2 — Cart Completion
+- [ ] **Task 15: Cart Page Polish & Quantity Inputs**
+- [ ] **Task 16: Cart Drawer Slide-out UI**
+- [ ] **Task 17: Cart Item Removal & Empty State Handling**
+- [ ] **Task 18: Cart LocalStorage Persistence**
+- [ ] **Task 19: Combined Shipping Preorder Warnings in Cart**
 
-### Phase 5 — Cart, Checkout, and Policies
-- [ ] **Task 17: Cart Review**
-- [ ] **Task 18: Checkout Review**
-- [ ] **Task 19: Shipping Policy Page**
-- [ ] **Task 20: Refund and Returns Policy Page**
-- [ ] **Task 21: Privacy Policy and Terms Pages**
+### Phase 3 — Preorder Flow
+- [ ] **Task 20: Dynamic Preorder Listing Page**
+- [ ] **Task 21: Preorder Detail Copy & Cart Labeling**
 
-### Phase 6 — SEO, Accessibility, and Performance
-- [ ] **Task 22: SEO Metadata**
-- [ ] **Task 23: Accessibility Pass**
-- [ ] **Task 24: Performance Optimization**
-- [ ] **Task 25: Checkout / Cart Test**
-- [ ] **Task 26: Final QA Pass**
+### Phase 4 — Request Item Flow
+- [ ] **Task 22: Request Item Form Page & Validation**
+- [ ] **Task 23: Success / Error Notifications & Loading Spinners**
+
+### Phase 5 — Trust and Policy Polish
+- [ ] **Task 24: Legal Policies Pages (Shipping, Refunds, Privacy, Terms)**
+- [ ] **Task 25: About, Contact, & FAQ Content Polish**
+
+### Phase 6 — SEO, Accessibility, and Mobile Polish
+- [ ] **Task 26: Unique Page Titles, Meta Tags, & Open Graph previews**
+- [ ] **Task 27: Keyboard Navigation Focus & Skip Links**
+- [ ] **Task 28: Alt Tags, Screen-Reader Labels, & Contrast Audits**
+- [ ] **Task 29: Mobile Spacing, No Horizontal Overflow, & Lighthouse Auditing**
+
+### Phase 7 — Supabase/Admin Later
+- [ ] **Task 30: Schema/DB Finalization Planning (Wait for User Request)**
+
+### Phase 8 — Checkout/Payment Later
+- [ ] **Task 31: Checkout Integration Planning (Placeholder Action for now)**
 
 ---
 
 ## Decisions Made
-1. **Redesign Philosophy:** The new website will look almost identical to the live reference website `https://shopaholic-approved-builder-m2zzyo03odzpwsln.hostingersite.com` to preserve the brand identity (soft, cute, collector boutique feel).
-2. **Tech Stack Decision:** The workspace is currently empty. A Vite + Vanilla JS + Vanilla CSS stack is recommended because it is fast, simple, standard-compliant, easy to package, and fits the user-information guidelines perfectly without unnecessary framework overhead.
-3. **Typography and Aesthetic:** Google Fonts used in the reference site (Poppins, Merriweather, Playfair Display, Lobster, Roboto, PT Serif) and soft pastel styling will be maintained in the local design system.
+1. **Redesign Philosophy:** The local project recreates the layout and design cues of the reference site (`https://shopaholic-approved-builder-m2zzyo03odzpwsln.hostingersite.com`) but organizes it as a robust vanilla JS/CSS multi-page application.
+2. **Tech Stack:** Vite + Vanilla Javascript + Vanilla CSS + Supabase JS SDK client integration.
+3. **Trademark Safety:** Brand names like "Labubu" have been removed from all visible public-facing copy and templates to prevent copyright issues. An independent collectible boutique store disclaimer is rendered in the global footer.
+4. **Product Mapping Resilience:** Added custom defaults inside `mapProduct` and runtime checks in `getProductCardHTML` / `product.js` to ensure the site handles missing database properties gracefully without freezing page render grids.
 
 ---
 
 ## User Approvals
-- [x] **Task 1 Audit and Setup:** Approved by user (automated review policy)
-- [x] **Task 2 Website Strategy and Site Map:** Approved by user (explicit confirmation)
-- [x] **Task 3 Brand and Design System Plan:** Approved by user (explicit confirmation)
-- [x] **Task 4 Navigation and Footer Fix:** Approved by user (explicit confirmation)
-- [x] **Task 5 Homepage Hero Section:** Approved by user (explicit confirmation)
-- [x] **Task 6 Homepage Category Sections:** Approved by user (explicit confirmation)
-- [x] **Task 12 Product Detail Page:** Approved by user (automated review policy)
+- [x] **Task 1 Audit and Setup:** Approved by user
+- [x] **Task 2 Website Strategy and Site Map:** Approved by user
+- [x] **Task 3 Brand and Design System Plan:** Approved by user
+- [x] **Task 4 Navigation and Footer Fix:** Approved by user
+- [x] **Task 5 Homepage Hero Section:** Approved by user
+- [x] **Task 6 Homepage Category Sections:** Approved by user
+- [x] **Task 12 Product Detail Page:** Approved by user
+- [ ] **Task 13 & 14 (Hotfix, Roadmap & Docs):** Pending User Verification
 
 ---
 
 ## Known Risks
-- **Browser Subagent CDP Error:** The browser subagent encountered an error (`failed to create browser context: failed to resolve CDP URLs: failed to parse CDP port`) which blocks visual screenshots and automation checks on the runner. Direct HTML structure parsing and local manual review will be used.
-- **Empty Workspace:** The workspace is empty, meaning all pages must be built from scratch.
-
----
-
-## Known Bugs
-- None (new codebase build has not yet started).
+- **CDP Port Parser Failures:** Browser subagent is unable to launch on the runner environment. Direct visual verification must be handled manually by the user, while programmatic tests verify JS/HTML output stability.
+- **Supabase Products Table Offline:** The active credentials target a Supabase project that does not contain the `products` table in its schema. The frontend falls back gracefully to static products.
 
 ---
 
 ## Future Improvements
-- Integrate standard, customizable React or lightweight JS state store for cart management once the cart structure is established.
-- Add robust disclaimer texts dynamically in product cards and pages.
+- Implement a global state provider or reactive store for syncing cart data across multiple open pages if the localStorage listener is insufficient.

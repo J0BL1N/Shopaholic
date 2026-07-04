@@ -296,6 +296,64 @@
 - Appended card link wrapper, detail grid layout, responsive typography overlays, preorder alert styles, custom quantity selectors, and product-specific badges in `index.css`.
 **Testing Performed:**  
 - Executed `npm run build` to confirm Vite compiles all multi-page entry points with zero errors.
-**Result:** Pass (Product detail page fully functional, card clicks navigate to details, build bundles successfully).  
-**Next Suggested Task:** Task 14: Preorder Page  
+**Result:** Pass (Product detail page fully functional, card clicks navigate to details, build bundles successfully).
+**Next Suggested Task:** Task 13: Shop Rendering Regression & Fallback Hardening
+
+## Task 13 & Hotfix - Shop Rendering Regression & Fallback Hardening
+
+**Date:** 2026-07-04
+**Status:** Complete
+**Goal:** Restore product cards on the Shop All page, resolve runtime crashes when rendering products with missing or optional database fields, and perform static fallback hardening and Junk Drawer image checks.
+**Files Inspected:**
+- `C:\Users\jayde\Downloads\fabby website\src\pages\shop.js`
+- `C:\Users\jayde\Downloads\fabby website\src\lib\productsApi.js`
+- `C:\Users\jayde\Downloads\fabby website\src\utils\productCard.js`
+- `C:\Users\jayde\Downloads\fabby website\src\pages\product.js`
+- `C:\Users\jayde\Downloads\fabby website\src\data\products.js`
+**Files Changed:**
+- `C:\Users\jayde\Downloads\fabby website\src\lib\productsApi.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\utils\productCard.js` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\src\pages\product.js` (MODIFY)
+**Summary of Changes:**
+- Identified that `getProductCardHTML` would fail to render the entire grid if `product.price` or other attributes were null, undefined, or parsed as `NaN` (such as if a dynamic database row lacked optional fields).
+- Added defensive fallback logic to `mapProduct` in `productsApi.js` for all mapped properties (`id`, `name`, `category`, `price`, `image`, `status`, `shortDescription`).
+- Hardened `getProductCardHTML` in `productCard.js` to handle `NaN` or invalid prices safely and prevent TypeErrors on `.toFixed(2)`.
+- Protected `product.js` page hydration elements against similar null/undefined product parameters.
+- Verified that all images in the `junk-drawer` category (e.g. `space-cat-keychain`, `dessert-sticker-pack`) are properly using valid, high-quality Unsplash image URLs.
+**Testing Performed:**
+- Wrote a local test script `capture_errors.js` using `puppeteer-core` to run headless Google Chrome, navigate to the local Vite dev server and `vite preview` server on ports 5173 and 4173, and scan console logs/rendered DOM elements.
+- Confirmed that Supabase connection warnings are logged gracefully and all 12 product cards render successfully in the grid `#shop-products-grid` with zero console exceptions.
+- Ran `npm run build` to verify standard multi-page code compiles and bundles perfectly.
+**Result:** Pass (Shop products grid restored, defensive fallbacks complete, build compiles with zero errors).
+**Issues / Risks:**
+- Visual layout and responsive behavior are verified via local Chrome emulation, but require final manual QA verification by Jay/Fabi on physical devices.
+**Next Suggested Task:** Task 14: Roadmap Planning + Docs Cleanup
+
+## Task 14 - Roadmap Planning & Docs Cleanup
+
+**Date:** 2026-07-04
+**Status:** Complete
+**Goal:** Align the project log, task state checklist, and project strategy to reflect current progress, and design a detailed 8-phase implementation roadmap.
+**Files Inspected:**
+- `C:\Users\jayde\Downloads\fabby website\docs\task-state.md`
+- `C:\Users\jayde\Downloads\fabby website\docs\task-log.md`
+- `C:\Users\jayde\Downloads\fabby website\docs\site-plan.md`
+- `C:\Users\jayde\Downloads\fabby website\docs\design-system.md`
+- `C:\Users\jayde\Downloads\fabby website\package.json`
+- `C:\Users\jayde\Downloads\fabby website\README.md`
+**Files Changed:**
+- `C:\Users\jayde\Downloads\fabby website\docs\task-state.md` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\docs\task-log.md` (MODIFY)
+- `C:\Users\jayde\Downloads\fabby website\docs\roadmap.md` (NEW)
+**Summary of Changes:**
+- Restructured `task-state.md` checklist to align with the new 8-phase project scope.
+- Logged completions for Task 12 (Product Detail page), Task 13 (Hotfix/defensive mapping), and Task 14 (Roadmap/docs).
+- Created a new documentation file `docs/roadmap.md` containing clear phases, status fields, priorities, notes, and manual QA guidelines for Phase 1 through 8.
+**Testing Performed:**
+- Ran `npm run build` to confirm all multi-page entries compile and bundle with zero errors or warnings.
+- Ran `git diff --check` to verify no whitespace errors exist.
+**Result:** Pass (Documentation synchronized and roadmap successfully established).
+**Issues / Risks:**
+- None.
+**Next Suggested Task:** Phase 2 — Cart Completion (Polish cart layout, quantities, deletions, and local storage state persistence).
 
